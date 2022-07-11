@@ -3,23 +3,23 @@
 
 <head>
 
-<title>Smart Text Editor</title>
+<title>Light Text Editor</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="author" content="Brandon Bennett">
-<meta name="description" content="Smart Text Editor is a vanilla JavaScript PWA that allows you to work on your coding projects from any device, in any browser, even if you don't have Internet access.">
+<meta name="author" content="SovMessUp">
+<meta name="description" content="Light Notepads is a vanilla JavaScript PWA that allows you to work on your coding projects from any device, in any browser, even if you don't have Internet access.">
 <meta name="google-site-verification" content="_LrfHy7pIualH1TolkQ5b3Po0dtjYrx-QQsiXelwx20">
 <meta property="og:title" content="Smart Text Editor">
 <meta property="og:description" content="The text editor that requires only a browser and a keyboard!">
-<meta property="og:image" content="https://stedit.app/resources/share-1200.png">
-<meta property="og:url" content="https://stedit.app">
+<meta property="og:image" content="https://sovmessup.github.io/Light-TextEditor/resources/share-1200.png">
+<meta property="og:url" content="https://sovmessup.github.io/Light-TextEditor/">
 <meta name="twitter:card" content="summary_large_image">
 <meta id="theme_color" name="theme-color" content="#1e1e1e">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Text Editor">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <base href="." target="_blank">
-<link rel="canonical" href="https://stedit.app">
+<link rel="canonical" href="https://sovmessup.github.io/Light-TextEditor/">
 <link rel="manifest">
 <link rel="icon" type="image/svg+xml" href="resources/icon.svg">
 <link rel="alternate icon" type="image/png" sizes="16x16" href="resources/icon-16.png">
@@ -140,7 +140,7 @@
     orientation_change: () => (document.body.hasAttribute("data-orientation-change")),
     scaling_change: () => (document.body.hasAttribute("data-scaling-change")),
     unsaved_work: () => (!Editor.appearance().parent_window || (workspace_tabs.querySelectorAll(".tab:not([data-editor-change])[data-editor-unsaved]").length == 0)),
-    preapproved_extensions: ["txt","html","css","js","php","json","webmanifest","bbmodel","xml","yaml","yml","dist","config","ini","md","markdown","mcmeta","lang","properties","uidx","material","h","fragment","vertex","fxh","hlsl","ihlsl","svg"],
+    preapproved_extensions: ["ltxd","txt","html","css","py","js","php","json","webmanifest","bbmodel","xml","yaml","yml","dist","config","ini","md","markdown","mcmeta","lang","properties","uidx","material","h","fragment","vertex","fxh","hlsl","ihlsl","svg"],
     active_editor: null,
     preview_editor: "active-editor",
     file_handles: {},
@@ -1632,9 +1632,11 @@
         <li onclick="saveFile();" data-shortcuts='{ "default": "Ctrl+S", "macOS": "Cmd+S" }'>Save</li>
         <li>Save As...
           <ul>
+            <li onclick="saveFile('ltxd');" data-shortcuts='{ "default": ".ltxd" }'>Light Text Document</li>
             <li onclick="saveFile('txt');" data-shortcuts='{ "default": ".txt" }'>Plain Text</li>
             <li onclick="saveFile('html');" data-shortcuts='{ "default": ".html" }'>HTML</li>
             <li onclick="saveFile('css');" data-shortcuts='{ "default": ".css" }'>CSS</li>
+            <li onclick="saveFile('js');" data-shortcuts='{ "default": ".py" }'>Python</li>
             <li onclick="saveFile('js');" data-shortcuts='{ "default": ".js" }'>JavaScript</li>
             <li onclick="saveFile('json');" data-shortcuts='{ "default": ".json" }'>JSON</li>
             <li onclick="saveFile('svg');" data-shortcuts='{ "default": ".svg" }'>SVG</li>
@@ -1712,7 +1714,7 @@
   <div class="app-omnibox">
     <button id="install_option" class="option" title="Install" onclick="showInstallPrompt();"><svg><use href="#install_icon"/></svg></button>
     <button class="option" title="Refresh Preview" onclick="refreshPreview({ force: true });"><svg><use href="#refresh_icon"/></svg></button>
-    <a class="option" href="https://github.com/Offroaders123/Smart-Text-Editor" title="Smart Text Editor on GitHub"><svg><use href="#github_icon"/></svg></a>
+    <a class="option" href="https://github.com/SovMessUp/Light-TextEditor" title="Light Text Editor on GitHub"><svg><use href="#github_icon"/></svg></a>
   </div>
 </header>
 
