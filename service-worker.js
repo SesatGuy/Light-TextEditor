@@ -1,5 +1,5 @@
 self.Editor = {
-  version: `Smart Text Editor v${3.20}`,
+  version: `Light Text Editor v${3.20}`,
   cache: true,
   environment: () => ({
     macOS_device: (/(macOS|Mac)/i.test(("userAgentData" in navigator) ? navigator.userAgentData.platform : navigator.platform) && navigator.standalone === undefined)
@@ -8,7 +8,7 @@ self.Editor = {
 }
 self.addEventListener("activate",event => {
   event.waitUntil(caches.keys().then(versions => Promise.all(versions.map(cache => {
-    if (cache.startsWith("Smart Text Editor") && cache !== Editor.version) return caches.delete(cache);
+    if (cache.startsWith("Light Text Editor") && cache !== Editor.version) return caches.delete(cache);
   }))));
   event.waitUntil(clients.claim());
   postMessageAllClients({ action: "service-worker-activated" });
