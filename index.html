@@ -2472,11 +2472,11 @@
     settings_card.open();
     removeQueryParameters(["settings"]);
   }
-  function createEditor({ name = "Untitled.txt", value = "", open = true, auto_created = false, auto_replace = true } = {}){
+  function createEditor({ name = "Untitled.ltxd", value = "", open = true, auto_created = false, auto_replace = true } = {}){
     var identifier = Math.random().toString(), tab = document.createElement("button"), editorName = document.createElement("span"), editorClose = document.createElement("button"), container = document.createElement("num-text"), previewOption = document.createElement("li"), focused_override, changeIdentifier = Math.random().toString();
     document.body.setAttribute("data-editor-change",changeIdentifier);
     var transitionDuration = parseInt(getElementStyle({ element: workspace_tabs, property: "transition-duration" }).split(",")[0].replace(/s/g,"") * 1000);
-    if (!name.includes(".")) name = `${name}.txt`;
+    if (!name.includes(".")) name = `${name}.ltxd`;
     tab.classList.add("tab");
     tab.setAttribute("data-editor-identifier",identifier);
     if (value) tab.setAttribute("data-editor-refresh",true);
@@ -2863,7 +2863,7 @@
     var change = (editor.tab.hasAttribute("data-editor-refresh") && Editor.settings.get("automatic-refresh") != false);
     if (!change && !force) return;
     var baseURL = Editor.settings.get("preview-base") || null, source = editor.textarea.value;
-    if (baseURL) source = `<!DOCTYPE html>\n<!-- Document Base URL appended by Smart Text Editor -->\n<base href="${baseURL}">\n\n${source}`;
+    if (baseURL) source = `<!DOCTYPE html>\n<!-- Document Base URL appended by Light Text Editor -->\n<base href="${baseURL}">\n\n${source}`;
     preview.addEventListener("load",() => {
       preview.contentWindow.document.open();
       preview.contentWindow.document.write(source);
@@ -2873,7 +2873,7 @@
     if (change) editor.tab.removeAttribute("data-editor-refresh");
   }
   function setTitle({ content, reset = false } = {}){
-    document.title = `${(content && !reset) ? `${content} - ` : ""}Smart Text Editor`;
+    document.title = `${(content && !reset) ? `${content} - ` : ""}Light Text Editor`;
   }
   function addQueryParameters(entries){
     var parameters = new URLSearchParams(window.location.search);
