@@ -140,7 +140,7 @@
     orientation_change: () => (document.body.hasAttribute("data-orientation-change")),
     scaling_change: () => (document.body.hasAttribute("data-scaling-change")),
     unsaved_work: () => (!Editor.appearance().parent_window || (workspace_tabs.querySelectorAll(".tab:not([data-editor-change])[data-editor-unsaved]").length == 0)),
-    preapproved_extensions: ["txt","ltxd","html","css","js","php","json","webmanifest","bbmodel","xml","yaml","yml","dist","config","ini","md","markdown","mcmeta","lang","properties","uidx","material","h","fragment","vertex","fxh","hlsl","ihlsl","svg"],
+    preapproved_extensions: ["txt","html","css","js","php","json","webmanifest","bbmodel","xml","yaml","yml","dist","config","ini","md","markdown","mcmeta","lang","properties","uidx","material","h","fragment","vertex","fxh","hlsl","ihlsl","svg"],
     active_editor: null,
     preview_editor: "active-editor",
     file_handles: {},
@@ -1633,7 +1633,6 @@
         <li>Save As...
           <ul>
             <li onclick="saveFile('txt');" data-shortcuts='{ "default": ".txt" }'>Plain Text</li>
-            <li onclick="saveFile('ltxd');" data-shortcuts='{ "default": ".ltxd" }'>Light Text Document</li>
             <li onclick="saveFile('html');" data-shortcuts='{ "default": ".html" }'>HTML</li>
             <li onclick="saveFile('css');" data-shortcuts='{ "default": ".css" }'>CSS</li>
             <li onclick="saveFile('js');" data-shortcuts='{ "default": ".py" }'>Python</li>
@@ -1642,6 +1641,7 @@
             <li onclick="saveFile('svg');" data-shortcuts='{ "default": ".svg" }'>SVG</li>
             <li>More...
               <ul>
+                <li onclick="saveFile('ltxd');" data-shortcuts='{ "default": ".ltxd" }'>Light Text Document</li>
                 <li onclick="saveFile('webmanifest');" data-shortcuts='{ "default": ".webmanifest" }'>Web Manifest</li>
                 <li onclick="saveFile('md');" data-shortcuts='{ "default": ".md" }'>Markdown</li>
                 <li onclick="saveFile('mcmeta');" data-shortcuts='{ "default": ".mcmeta" }'>MCMETA</li>
