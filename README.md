@@ -1,13 +1,4 @@
-<table>
-  <tr>
-    <td>
-      <img width="64" height="64" src="https://sovmessup.github.io/Light-TextEditor/resources/icon.svg" alt="Light Text Editor">
-    </td>
-    <td>
-      <h1>Light Text Editor</h1>
-    </td>
-  </tr>
-</table>
+# Light Text Editor
 
 The text editor that requires only a browser and a keyboard!
   
